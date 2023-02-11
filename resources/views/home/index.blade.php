@@ -181,11 +181,8 @@
                                 </div>
                                 <div class="ht-product-content">
                                     <div class="ht-product-content-inner">
-                                        <div class="ht-product-categories">
-                                            <a href="#">{{ $product->category->name }}</a>
-                                        </div>
                                         <h4 class="ht-product-title text-right">
-                                            <a href="#"> {{ $product->name }} </a>
+                                            <a href="{{ route('home.products.show' , ['product' => $product->slug]) }}"> {{ $product->name }} </a>
                                         </h4>
                                         <div class="ht-product-price">
                                             @if($product->quantity_check)
@@ -209,12 +206,6 @@
                                                     <p class="text-white">ناموجود</p>
                                                 </div>
                                             @endif
-                                        </div>
-                                        <div class="ht-product-ratting-wrap mt-4">
-                                            <div data-rating-stars="5"
-                                                data-rating-readonly="true"
-                                                data-rating-value="{{ ceil($product->rates->avg('rate')) }}">
-                                            </div>
                                         </div>
                                     </div>
 

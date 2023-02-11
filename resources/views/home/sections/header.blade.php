@@ -14,25 +14,25 @@
                     <div class="main-menu text-center">
                         <nav>
                             <ul>
-                                <li class="angle-shape">
-                                    <a href="#"> فروشگاه </a>
-                                    @php
-                                        $parentCategories = App\Models\Category::where('parent_id' , 0)->get();
-                                    @endphp
-                                    <ul class="mega-menu">
-                                        @foreach ($parentCategories as $parentCategory)
-                                        <li>
-                                            <a class="menu-title" href="{{ route('home.categories.show' , ['category' => $parentCategory->slug ]) }}">{{ $parentCategory->name }}</a>
+{{--                                <li class="angle-shape">--}}
+{{--                                    <a href="#"> فروشگاه </a>--}}
+{{--                                    @php--}}
+{{--                                        $parentCategories = App\Models\Category::where('parent_id' , 0)->get();--}}
+{{--                                    @endphp--}}
+{{--                                    <ul class="mega-menu">--}}
+{{--                                        @foreach ($parentCategories as $parentCategory)--}}
+{{--                                        <li>--}}
+{{--                                            <a class="menu-title" href="{{ route('home.categories.show' , ['category' => $parentCategory->slug ]) }}">{{ $parentCategory->name }}</a>--}}
 
-                                            <ul>
-                                                @foreach ($parentCategory->children as $childCategory)
-                                                    <li><a href="{{ route('home.categories.show' , ['category' => $childCategory->slug ]) }}">{{ $childCategory->name }}</a></li>
-                                                @endforeach
-                                            </ul>
-                                        </li>
-                                        @endforeach
-                                    </ul>
-                                </li>
+{{--                                            <ul>--}}
+{{--                                                @foreach ($parentCategory->children as $childCategory)--}}
+{{--                                                    <li><a href="{{ route('home.categories.show' , ['category' => $childCategory->slug ]) }}">{{ $childCategory->name }}</a></li>--}}
+{{--                                                @endforeach--}}
+{{--                                            </ul>--}}
+{{--                                        </li>--}}
+{{--                                        @endforeach--}}
+{{--                                    </ul>--}}
+{{--                                </li>--}}
 
                                 <li class="angle-shape">
                                     <a href="{{ route('home.index') }}"> صفحه اصلی </a>
